@@ -3,10 +3,24 @@
 #include <time.h>
 #include <string>
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 Model::Model()
 {
+	//int list[2] = { 0, 0 };
+	ifstream myfile;
+	myfile.open("data.txt");
+
+	if (myfile.good())
+	{
+		while(getline(myfile, )
+		
+		myfile >> Johan_a ;
+		>> m_Kajsa;
+	}
+
+
 }
 
 
@@ -42,29 +56,19 @@ int Model::CalculateScore()
 }
 
 
-int Model::AddScore(int score, char* player)
+void Model::AddScore(int score, char* player)
 {
 
 	if (player == "Johan")
 	{
-		m_Johan += score;
-		return m_Johan;
+		m_Johan = score;
+
 	}
 	else
 	{
-		m_Kajsa += score;
-		return m_Kajsa;
+		m_Kajsa = score;
 	}
 	
-}
 
-int Model::getScore(const char* player) {
-		
-	if (player == "Johan") {
-		return m_Johan;
-	}
-	else {
-		return m_Kajsa;
-	}
-	
+
 }
