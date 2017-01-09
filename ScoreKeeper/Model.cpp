@@ -10,7 +10,7 @@ using namespace std;
 
 Model::Model()
 {
-	//int list[2] = { 0, 0 };
+	//int list[2] = { 0, 0 }; // hej
 	ifstream myfile;
 	myfile.open("data.txt");
 
