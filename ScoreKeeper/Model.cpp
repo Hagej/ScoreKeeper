@@ -14,15 +14,31 @@ Model::~Model()
 {
 }
 
+// Make a tm structure representing this date
+std::tm make_tm(int year, int month, int day)
+{
+	tm tm = { 0 };
+	tm.tm_year = year - 1900; // years count from 1900
+	tm.tm_mon = month - 1;    // months count from January=0
+	tm.tm_mday = day;         // days count from 1
+	return tm;
+}
+
 int Model::CalculateScore()
 {	
+	tm nyår = make_tm(2017, 01, 01);
+	time_t n = mktime(&nyår);
+
+
 	now = time(NULL);
-	diff = difftime(lasttime, now);
+	diff = difftime(now, n);
 	lasttime = now; 
+
+	int dagarSenNyår = (int)(diff / (3600 * 24));
 
 	cout << diff << "days";
 
-	return diff;
+	return dagarSenNyår;
 }
 
 

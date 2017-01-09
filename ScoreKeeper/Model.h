@@ -21,7 +21,7 @@ private:
 int m_Kajsa; 
 int m_Johan;
 time_t now;
-int diff;
+double diff;
 time_t lasttime = 0;
 
 
