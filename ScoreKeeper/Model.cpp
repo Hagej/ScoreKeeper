@@ -42,16 +42,29 @@ int Model::CalculateScore()
 }
 
 
-void Model::AddScore(int score, char* player)
+int Model::AddScore(int score, char* player)
 {
 
 	if (player == "Johan")
 	{
-		m_Johan = score;
+		m_Johan += score;
+		return m_Johan;
 	}
 	else
 	{
-		m_Kajsa = score;
+		m_Kajsa += score;
+		return m_Kajsa;
+	}
+	
+}
+
+int Model::getScore(const char* player) {
+		
+	if (player == "Johan") {
+		return m_Johan;
+	}
+	else {
+		return m_Kajsa;
 	}
 	
 }
