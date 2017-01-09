@@ -20,6 +20,13 @@ BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
+// Gui elements
+HWND j_score_lbl, k_score_lbl;
+
+// Model
+Model gameModel;
+
+
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
                      _In_ LPWSTR    lpCmdLine,
@@ -29,10 +36,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     UNREFERENCED_PARAMETER(lpCmdLine);
 
     // TODO: Place code here.
-
-	Model newGame;
-	newGame.CalculateScore();
-
 
 
     // Initialize global strings
@@ -142,18 +145,43 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     switch (message)
     {
 	case WM_CREATE:
+		int js, ks;
+		js = gameModel.getScore("Johan");	// Hämta nuvarande poäng
+		ks = gameModel.getScore("Kajsa");
 
-		CreateWindow(
-			L"textbox", // Window class (button)
-			L"Text", // Window text
+
+		wchar_t j_score[256];					// Konvertera till LPCWSTR
+		wsprintfW(j_score, L"%d", js);
+
+		wchar_t k_score[256];
+		wsprintfW(k_score, L"%d", ks);
+		
+
+		/* Johans score label */
+		j_score_lbl = CreateWindow(
+			L"static", // Window class (button)
+			j_score, // Window text
 			WS_VISIBLE | WS_CHILD, // Window style (WS)
 			200, 10, 80, 25, // x, y, width, height
 			hWnd,			// Parent window
-			(HMENU)1,		// Menu ID
+			(HMENU)0,		// Menu ID
 			NULL,
 			NULL
 		);
 
+		/* Kajsas score label */
+		k_score_lbl = CreateWindow(
+			L"static", // Window class (button)
+			k_score, // Window text
+			WS_VISIBLE | WS_CHILD, // Window style (WS)
+			200, 40, 80, 25, // x, y, width, height
+			hWnd,			// Parent window
+			(HMENU)0,		// Menu ID
+			NULL,
+			NULL
+		);
+
+		/* Johans score knapp */
 		CreateWindow(
 			L"button", // Window class (button)
 			L"Johan", // Window text
@@ -165,6 +193,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			NULL
 		);
 
+		/* Kajsas score knapp */
 		CreateWindow(
 			L"button", // Window class (button)
 			L"Kajsa", // Window text
@@ -181,10 +210,24 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		break;
     case WM_COMMAND:
         {
+			int score;
+
             int wmId = LOWORD(wParam);
             // Parse the menu selections:
             switch (wmId)
             {
+			case 1:		// Johan-knappen har tryckts
+				score = gameModel.AddScore(gameModel.CalculateScore(), "Johan");
+				wchar_t j_buffer[256];
+				wsprintfW(j_buffer, L"%d", score);
+				SetWindowText(j_score_lbl, j_buffer);
+				break;
+			case 2:		// Kajsa-knappen har tryckts
+				score = gameModel.AddScore(gameModel.CalculateScore(), "Kajsa");
+				wchar_t k_buffer[256];
+				wsprintfW(k_buffer, L"%d", score);
+				SetWindowText(k_score_lbl, k_buffer);
+				break;
             case IDM_ABOUT:
                 DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
                 break;
