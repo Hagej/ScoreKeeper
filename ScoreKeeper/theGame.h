@@ -2,6 +2,7 @@
 #include <ctime>
 #include <iostream>
 #include <string>
+#include <time.h>
 
 class theGame
 {
@@ -20,7 +21,7 @@ private:
 int m_Kajsa; 
 int m_Johan;
 time_t now;
-double diff;
+int diff;
 time_t lasttime = 0;
 
 
