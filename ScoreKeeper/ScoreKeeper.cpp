@@ -32,10 +32,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     // TODO: Place code here.
 
-
-
-
-	theGame newGame;
+	Model newGame;
 	newGame.CalculateScore();
 
 
@@ -147,9 +144,21 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     switch (message)
     {
 	case WM_CREATE:
+
+		CreateWindow(
+			L"textbox", // Window class (button)
+			L"Text", // Window text
+			WS_VISIBLE | WS_CHILD, // Window style (WS)
+			200, 10, 80, 25, // x, y, width, height
+			hWnd,			// Parent window
+			(HMENU)1,		// Menu ID
+			NULL,
+			NULL
+		);
+
 		CreateWindow(
 			L"button", // Window class (button)
-			L"Hello", // Window text
+			L"Johan", // Window text
 			WS_VISIBLE | WS_CHILD, // Window style (WS)
 			10, 10, 80, 25, // x, y, width, height
 			hWnd,			// Parent window
@@ -157,6 +166,20 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			NULL,
 			NULL
 		);
+
+		CreateWindow(
+			L"button", // Window class (button)
+			L"Kajsa", // Window text
+			WS_VISIBLE | WS_CHILD, // Window style (WS)
+			10, 40, 80, 25, // x, y, width, height
+			hWnd,			// Parent window
+			(HMENU) 2,		// Menu ID
+			NULL,
+			NULL
+		);
+
+
+
 		break;
     case WM_COMMAND:
         {

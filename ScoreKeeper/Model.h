@@ -4,14 +4,14 @@
 #include <string>
 #include <time.h>
 
-class theGame
+class Model
 {
 public:
-	theGame();
-	~theGame();
+	Model();
+	~Model();
 	
 	int CalculateScore(); // räkna ut dagarna. 
-	void theGame::AddScore(int, char*); // addera poängen
+	void Model::AddScore(int, char*); // addera poängen
 
 
 

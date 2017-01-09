@@ -1,20 +1,20 @@
 #include "stdafx.h"
-#include "theGame.h"
+#include "Model.h"
 #include <time.h>
 #include <string>
 #include <iostream>
 using namespace std;
 
-theGame::theGame()
+Model::Model()
 {
 }
 
 
-theGame::~theGame()
+Model::~Model()
 {
 }
 
-int theGame::CalculateScore()
+int Model::CalculateScore()
 {	
 	now = time(NULL);
 	diff = difftime(lasttime, now);
@@ -26,7 +26,7 @@ int theGame::CalculateScore()
 }
 
 
-void theGame::AddScore(int score, char* player)
+void Model::AddScore(int score, char* player)
 {
 
 	if (player == "Johan")
