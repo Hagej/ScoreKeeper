@@ -1,6 +1,8 @@
 // WindowApp.cpp : Defines the entry point for the application.
 
 #include <iostream>
+#include <string>
+#include <time.h>
 
 #include "stdafx.h"
 #include "ScoreKeeper.h"

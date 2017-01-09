@@ -22,7 +22,7 @@ int Model::CalculateScore()
 
 	cout << diff << "days";
 
-	return (int)diff;
+	return diff;
 }
 
 
