@@ -6,6 +6,8 @@
 #include <fstream>
 using namespace std;
 
+// cAMILLA VILL VA MED -- REtaRd
+
 Model::Model()
 {
 	//int list[2] = { 0, 0 };
