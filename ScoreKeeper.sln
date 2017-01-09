@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScoreKeeper", "ScoreKeeper\ScoreKeeper.vcxproj", "{2EF634CF-319D-4ECF-99B8-B9BD43648C86}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CardConsoleApplication", "..\..\..\..\lenforsprog\CardConsoleApplication\CardConsoleApplication\CardConsoleApplication\CardConsoleApplication.vcxproj", "{82BC0B70-8BA4-450B-A855-3BE4840B026E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{2EF634CF-319D-4ECF-99B8-B9BD43648C86}.Release|x64.Build.0 = Release|x64
 		{2EF634CF-319D-4ECF-99B8-B9BD43648C86}.Release|x86.ActiveCfg = Release|Win32
 		{2EF634CF-319D-4ECF-99B8-B9BD43648C86}.Release|x86.Build.0 = Release|Win32
+		{82BC0B70-8BA4-450B-A855-3BE4840B026E}.Debug|x64.ActiveCfg = Debug|x64
+		{82BC0B70-8BA4-450B-A855-3BE4840B026E}.Debug|x64.Build.0 = Debug|x64
+		{82BC0B70-8BA4-450B-A855-3BE4840B026E}.Debug|x86.ActiveCfg = Debug|Win32
+		{82BC0B70-8BA4-450B-A855-3BE4840B026E}.Debug|x86.Build.0 = Debug|Win32
+		{82BC0B70-8BA4-450B-A855-3BE4840B026E}.Release|x64.ActiveCfg = Release|x64
+		{82BC0B70-8BA4-450B-A855-3BE4840B026E}.Release|x64.Build.0 = Release|x64
+		{82BC0B70-8BA4-450B-A855-3BE4840B026E}.Release|x86.ActiveCfg = Release|Win32
+		{82BC0B70-8BA4-450B-A855-3BE4840B026E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

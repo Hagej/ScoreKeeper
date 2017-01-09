@@ -1,2 +1,5 @@
-﻿  ScoreKeeper.vcxproj -> C:\Stuffz\Kod\Cpp\ScoreKeeper\x64\Debug\ScoreKeeper.exe
-  ScoreKeeper.vcxproj -> C:\Stuffz\Kod\Cpp\ScoreKeeper\x64\Debug\ScoreKeeper.pdb (Full PDB)
+﻿  stdafx.cpp
+  ScoreKeeper.cpp
+  LINK : C:\Users\kajsa\Programmering\ScoreKeeper\x64\Debug\ScoreKeeper.exe not found or not built by the last incremental link; performing full link
+  ScoreKeeper.vcxproj -> C:\Users\kajsa\Programmering\ScoreKeeper\x64\Debug\ScoreKeeper.exe
+  ScoreKeeper.vcxproj -> C:\Users\kajsa\Programmering\ScoreKeeper\x64\Debug\ScoreKeeper.pdb (Full PDB)
