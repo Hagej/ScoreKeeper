@@ -45,9 +45,8 @@ std::tm make_tm(int year, int month, int day)
 
 int Model::CalculateScore()
 {	
-	tm nyår = make_tm(2017, 01, 01);
-	time_t n = mktime(&nyår);
-
+	tm newYear = make_tm(2017, 01, 01);
+	time_t n = mktime(&newYear);
 
 	now = time(NULL);
 	diff = difftime(now, n);
@@ -55,13 +54,11 @@ int Model::CalculateScore()
 
 	int dagarSenNyår = (int)(diff / (3600 * 24));
 
-	cout << diff << "days";
-
 	return dagarSenNyår;
 }
 
 
-void Model::AddScore(char* player)
+void Model::AddScore(const string& player)
 {
 	int temp_points = CalculateScore();
 
@@ -77,7 +74,7 @@ void Model::AddScore(char* player)
 }
 
 
-int Model::getScore(const char* person)// få poängen // retunera en integer m_kajsa eller johan
+int Model::getScore(const string& person)// få poängen // retunera en integer m_kajsa eller johan
 {
 	if (person == "Johan")
 	{

@@ -11,18 +11,16 @@ public:
 	~Model();
 	
 	int CalculateScore(); // räkna ut dagarna. 
-	void AddScore(char* player); // addera poängen
-	int getScore(const char*); // få poängen
-
-	int m_Kajsa = 0, m_Johan = 0;
+	void AddScore(const std::string& player); // addera poängen
+	int getScore(const std::string& player); // få poängen
 
 private:
 
 //	char* hej = "hej"
-
-time_t now;
-double diff;
-time_t lasttime = 0;
+	int m_Kajsa = 0, m_Johan = 0;
+	time_t now;
+	double diff;
+	time_t lasttime = 0;
 
 
 };

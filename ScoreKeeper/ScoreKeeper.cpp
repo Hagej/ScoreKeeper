@@ -15,6 +15,8 @@ using namespace std;
 HINSTANCE hInst;                                // current instance
 WCHAR szTitle[MAX_LOADSTRING];					// The title bar text
 WCHAR szWindowClass[MAX_LOADSTRING];            // the main window class name
+string K = "Kajsa";
+string J = "Johan";
 
 // Forward declarations of functions included in this code module:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -148,8 +150,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     {
 	case WM_CREATE:
 		int js, ks;
-		js = gameModel.getScore("Johan");	// Hämta nuvarande poäng
-		ks = gameModel.getScore("Kajsa");
+		js = gameModel.getScore(J);	// Hämta nuvarande poäng
+		ks = gameModel.getScore(K);
 
 
 		wchar_t j_score[256];					// Konvertera till LPCWSTR
@@ -219,16 +221,16 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             switch (wmId)
             {
 			case 1:		// Johan-knappen har tryckts
-				gameModel.AddScore("Johan");
+				gameModel.AddScore(J); //String J = "Johan" deklarerad längst upp, mindre risk för felstavning mm
 				//score = gameModel.m_Johan;
 				wchar_t j_buffer[256];
-				wsprintfW(j_buffer, L"%d", gameModel.getScore("Johan"));
+				wsprintfW(j_buffer, L"%d", gameModel.getScore(J));
 				SetWindowText(j_score_lbl, j_buffer);
 				break;
 			case 2:		// Kajsa-knappen har tryckts
-				gameModel.AddScore("Kajsa");
+				gameModel.AddScore(K); //String K = "Kajsa" deklarerad längst upp, mindre risk för felstavning mm
 				wchar_t k_buffer[256];
-				wsprintfW(k_buffer, L"%d", gameModel.getScore("Kajsa"));
+				wsprintfW(k_buffer, L"%d", gameModel.getScore(K));
 				SetWindowText(k_score_lbl, k_buffer);
 				break;
             case IDM_ABOUT:
