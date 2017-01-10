@@ -212,23 +212,23 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		break;
     case WM_COMMAND:
         {
-			int score;
+			//int score;
 
             int wmId = LOWORD(wParam);
             // Parse the menu selections:
             switch (wmId)
             {
 			case 1:		// Johan-knappen har tryckts
-				score = gameModel.AddScore(gameModel.CalculateScore(), "Johan");
+				gameModel.AddScore("Johan");
 				//score = gameModel.m_Johan;
 				wchar_t j_buffer[256];
-				wsprintfW(j_buffer, L"%d", score);
+				wsprintfW(j_buffer, L"%d", gameModel.getScore("Johan"));
 				SetWindowText(j_score_lbl, j_buffer);
 				break;
 			case 2:		// Kajsa-knappen har tryckts
-				score = gameModel.AddScore(gameModel.CalculateScore(), "Kajsa");
+				gameModel.AddScore("Kajsa");
 				wchar_t k_buffer[256];
-				wsprintfW(k_buffer, L"%d", score);
+				wsprintfW(k_buffer, L"%d", gameModel.getScore("Kajsa"));
 				SetWindowText(k_score_lbl, k_buffer);
 				break;
             case IDM_ABOUT:

@@ -61,25 +61,34 @@ int Model::CalculateScore()
 }
 
 
-int Model::AddScore(int score, char* player)
+void Model::AddScore(char* player)
 {
+	int temp_points = CalculateScore();
 
 	if (player == "Johan")
 	{
-		m_Johan = score;
-		return m_Johan;
-
+		m_Johan = m_Johan + temp_points;
 	}
-	else
+	else if (player == "Kajsa")
 	{
-		m_Kajsa = score;
-		return m_Kajsa;
+		m_Kajsa = m_Kajsa + temp_points;	
 	}
 	
 }
 
 
-int Model::getScore(const char*)// få poängen
+int Model::getScore(const char* person)// få poängen // retunera en integer m_kajsa eller johan
 {
-	return m_Kajsa;
+	if (person == "Johan")
+	{
+		return m_Johan;
+	}
+	else if (person == "Kajsa")
+	{
+		return m_Kajsa;
+	}
+	else
+	{
+		return -1;
+	}
 }

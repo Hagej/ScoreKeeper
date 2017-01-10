@@ -11,7 +11,7 @@ public:
 	~Model();
 	
 	int CalculateScore(); // räkna ut dagarna. 
-	int AddScore(int score, char* player); // addera poängen
+	void AddScore(char* player); // addera poängen
 	int getScore(const char*); // få poängen
 
 	int m_Kajsa = 0, m_Johan = 0;
