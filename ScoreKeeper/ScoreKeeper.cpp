@@ -15,8 +15,8 @@ using namespace std;
 HINSTANCE hInst;                                // current instance
 WCHAR szTitle[MAX_LOADSTRING];					// The title bar text
 WCHAR szWindowClass[MAX_LOADSTRING];            // the main window class name
-string K = "Kajsa";
-string J = "Johan";
+const string K = "Kajsa";
+const string J = "Johan";
 
 // Forward declarations of functions included in this code module:
 ATOM                MyRegisterClass(HINSTANCE hInstance);

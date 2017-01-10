@@ -7,17 +7,16 @@
 #include <vector>
 using namespace std;
 
-// cAMILLA VILL VA MED -- REtaRd
 
 Model::Model()
 {
-	ifstream myfile("data.txt");
+	ifstream myfile("data.txt"); // TODO: Skapa fil från programmet, om ej redan skapad. Byt till ini-fil eller liknande.
 	string line;
 	vector<string> points;
 
 	if (myfile.is_open())
 	{
-		while (getline(myfile, line))		// ersätt med inifil sen.
+		while (getline(myfile, line))	// TODO: Eftersom ni har var sin lokal fil med sparade värden så kommer ni få olika poängräkning.... (Använd databas för att synka)
 		{
 			points.push_back(line);
 		}
@@ -43,16 +42,16 @@ std::tm make_tm(int year, int month, int day)
 	return tm;
 }
 
-int Model::CalculateScore()
+int Model::CalculateScore() // TODO: Fixa CalculatScore med riktig algoritm
 {	
 	tm newYear = make_tm(2017, 01, 01);
-	time_t n = mktime(&newYear);
+	time_t n = mktime(&newYear); // TODO: Sist använda datum måste också sparas till databasen för att programmet ska fungera korrekt
 
 	now = time(NULL);
 	diff = difftime(now, n);
 	lasttime = now; 
 
-	int dagarSenNyår = (int)(diff / (3600 * 24));
+	int dagarSenNyår = (int)(diff / (3600 * 24)); //TODO: Byt alla svenska ord mot engelska!! (använd inte å, ä, ö i variabelnamn)
 
 	return dagarSenNyår;
 }
@@ -74,7 +73,7 @@ void Model::AddScore(const string& player)
 }
 
 
-int Model::getScore(const string& person)// få poängen // retunera en integer m_kajsa eller johan
+int Model::getScore(const string& person)// få poängen, retunera en integer m_kajsa eller johan
 {
 	if (person == "Johan")
 	{
