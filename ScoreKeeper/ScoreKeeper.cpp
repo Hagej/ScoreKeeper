@@ -220,6 +220,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             {
 			case 1:		// Johan-knappen har tryckts
 				score = gameModel.AddScore(gameModel.CalculateScore(), "Johan");
+				//score = gameModel.m_Johan;
 				wchar_t j_buffer[256];
 				wsprintfW(j_buffer, L"%d", score);
 				SetWindowText(j_score_lbl, j_buffer);

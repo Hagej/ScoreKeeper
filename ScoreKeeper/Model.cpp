@@ -4,31 +4,34 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <vector>
 using namespace std;
 
 // cAMILLA VILL VA MED -- REtaRd
 
 Model::Model()
 {
-	//int list[2] = { 0, 0 }; // hej
-	ifstream myfile;
-	myfile.open("data.txt");
+	ifstream myfile("data.txt");
+	string line;
+	vector<string> points;
 
-	if (myfile.good())
+	if (myfile.is_open())
 	{
-		while(getline(myfile, )
-		
-		myfile >> Johan_a ;
-		>> m_Kajsa;
+		while (getline(myfile, line))		// ersätt med inifil sen.
+		{
+			points.push_back(line);
+		}
 	}
 
-
+	m_Kajsa = stoi(points[0]);
+	m_Johan = stoi(points[1]);
 }
 
 
 Model::~Model()
 {
 }
+
 
 // Make a tm structure representing this date
 std::tm make_tm(int year, int month, int day)
@@ -58,19 +61,25 @@ int Model::CalculateScore()
 }
 
 
-void Model::AddScore(int score, char* player)
+int Model::AddScore(int score, char* player)
 {
 
 	if (player == "Johan")
 	{
 		m_Johan = score;
+		return m_Johan;
 
 	}
 	else
 	{
 		m_Kajsa = score;
+		return m_Kajsa;
 	}
 	
+}
 
 
+int Model::getScore(const char*)// få poängen
+{
+	return m_Kajsa;
 }
